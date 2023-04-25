@@ -34,7 +34,7 @@ export function Header({ menus }: HeaderProps) {
           </div>
         </div>
       </div>
-      <div className="wrap-container mb-4" style={{ backgroundColor: "#ec5ba4" }}>
+      <div className="wrap-container mb-4 bg-inherit">
 
       <div className="container relative flex-wrap items-center justify-between py-2 md:flex lg:py-2">
         <Link href="/" passHref>
