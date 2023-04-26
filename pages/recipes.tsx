@@ -28,15 +28,15 @@ export default function RecipesPage({
       menus={menus}
       blocks={blocks}
       meta={{
-        title: t("products"),
+        title: t("recipes"),
       }}
     >
       <BlockBanner block={banner} />
       <PageHeader
-        heading={t("products")}
+        heading={t("recipes")}
         breadcrumbs={[
           {
-            title: t("products"),
+            title: t("recipes"),
           },
         ]}
       />
