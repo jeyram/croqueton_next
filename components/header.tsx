@@ -34,12 +34,12 @@ export function Header({ menus }: HeaderProps) {
           </div>
         </div>
       </div>
-      <div className="wrap-container mb-4 bg-inherit">
+      <div className="wrap-container mb-0 bg-inherit">
 
-      <div className="container relative flex-wrap items-center justify-between py-2 md:flex lg:py-2">
+      <div className="container relative flex-wrap items-center justify-between pt-2 pb-0 md:flex lg:pt-2">
         <Link href="/" passHref>
           <a className="flex justify-start">
-            <Logo className="w-48 h-12 text-primary lg:h-16 lg:w-52" />
+            <Logo className="w-48 h-18 text-primary lg:w-60"/>
             <span className="sr-only">{siteConfig.name}</span>
           </a>
         </Link>
