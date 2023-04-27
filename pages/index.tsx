@@ -50,7 +50,7 @@ export default function IndexPage({
               "explore-recipes-across-every-type-of-occasion-ingredient-and-skill-level"
             )}
           </p>
-          <div className="grid gap-8 sm:grid-cols-2">
+          <div className="grid gap-2 sm:grid-cols-4">
             {promotedRecipes.map((node) => (
               <NodeRecipeCard node={node} key={node.id} />
             ))}
