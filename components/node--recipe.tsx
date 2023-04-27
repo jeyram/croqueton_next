@@ -18,8 +18,8 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
       <Breadcrumbs
         items={[
           {
-            title: t("products"),
-            url: "/products",
+            title: t("recipes"),
+            url: "/recipes",
           },
           {
             title: node.title,
@@ -142,7 +142,7 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
           </div>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
-          <div className="flex flex-col p-8 space-y-6 bg-body">
+          {/* <div className="flex flex-col p-8 space-y-6 bg-body">
             <h2 className="pb-3 font-serif text-2xl border-b lg:text-3xl border-pink">
               {t("ingredients")}
             </h2>
@@ -153,7 +153,7 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
           <div className="flex flex-col space-y-6 md:col-span-2">
             <h3 className="pb-3 font-serif text-2xl border-b lg:text-3xl border-pink">
               {t("recipe-instruction")}
