@@ -79,6 +79,7 @@ export function getParams(
         "field_number_of_servings",
         "field_preparation_time",
         "field_recipe_instruction",
+        "field_size",
         "field_summary",
         "field_tags",
         "field_media_image",
