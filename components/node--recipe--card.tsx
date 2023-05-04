@@ -19,7 +19,7 @@ export function NodeRecipeCard({ node, ...props }: NodeRecipeCardProps) {
       <h2 className="flex-1 font-serif text-[22px]">{node.title}</h2>
       <Link href={node.path.alias} passHref>
         <a className="inline-flex items-center uppercase hover:underline text-link">
-          {t("view-recipe")}
+          {t("view-dog")}
           <svg
             className="w-5 h-5 ml-1"
             viewBox="0 0 24 24"

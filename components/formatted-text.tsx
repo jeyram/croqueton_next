@@ -14,8 +14,8 @@ const options: HTMLReactParserOptions = {
           src,
           alt,
           class: className,
-          width = "100px",
-          height = "100px",
+          width = "600px",
+          height = "400px",
         } = domNode.attribs
 
         if (isRelative(src)) {
