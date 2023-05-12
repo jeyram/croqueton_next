@@ -46,9 +46,7 @@ export default function IndexPage({
       {promotedRecipes?.length ? (
         <div className="container">
           <p className="py-10 font-serif text-3xl text-center text-text">
-            {t(
-              "explore-recipes-across-every-type-of-occasion-ingredient-and-skill-level"
-            )}
+            {"Adopta y cambia una vida. Estos son nuestros perritos en busca de familia."}
           </p>
           <div className="grid gap-2 sm:grid-cols-4">
             {promotedRecipes.map((node) => (

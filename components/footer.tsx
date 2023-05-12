@@ -30,7 +30,7 @@ export function Footer({ menus, blocks }: FooterProps) {
         <section className="py-10 text-white bg-gray">
           <div className="container">
             <h2 className="font-serif text-3xl text-center">
-              {t("recipe-collections")}
+              {t("related-topics")}
             </h2>
             <div className="grid max-w-4xl mx-auto mt-4 text-sm text-center md:text-left md:grid-cols-4 gap-y-3 gap-x-4">
               {blocks.recipeCollections.map((tag) => (
