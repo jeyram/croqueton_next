@@ -1,11 +1,11 @@
 module.exports = {
-  name: "Umami",
-  slogan: "The Umami demo site built as a headless Drupal with Next.js",
+  name: "Croquetón GDL",
+  slogan: "Gracias por echarnos la pata",
   baseUrl: process.env.NEXT_PUBLIC_BASE_URL,
   drupalBaseUrl: process.env.NEXT_PUBLIC_DRUPAL_BASE_URL,
-  defaultLocale: "en",
+  defaultLocale: "es",
   locales: {
-    en: "English",
     es: "Español",
+    // en: "English",
   },
 }
