@@ -80,6 +80,8 @@ export function getParams(
         "field_preparation_time",
         "field_recipe_instruction",
         "field_size",
+        "field_protocol",
+        "field_dog_status",
         "field_summary",
         "field_tags",
         "field_media_image",
