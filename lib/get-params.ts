@@ -79,6 +79,8 @@ export function getParams(
         "field_number_of_servings",
         "field_preparation_time",
         "field_recipe_instruction",
+        "field_age",
+        "field_month_year",
         "field_size",
         "field_protocol",
         "field_dog_status",

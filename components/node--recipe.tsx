@@ -74,7 +74,7 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
                 </svg>
                 <p className="font-semibold">{t("age")}:</p>
                 <p className="lowercase">
-                  {node.field_preparation_time} {t("months")}
+                  {node.field_age} {node.field_month_year}
                 </p>
               </div>
             )}
