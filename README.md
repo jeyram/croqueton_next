@@ -1,6 +1,6 @@
-# example-umami
+# Croqueton A.C.
 
-The Umami demo site built as a headless Drupal with Next.js.
+Fast implementation with site built as a headless Drupal based in umami distro with Next.js.
 
 See https://demo.next-drupal.org
 
