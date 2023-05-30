@@ -5,6 +5,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "vercel-build": "next build",
     "dev": "next dev",
     "debug": "NODE_OPTIONS='--inspect' next dev",
     "preview": "next build && next start",
