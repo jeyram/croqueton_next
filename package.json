@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "vercel-build": "next build",
-    "vercel-start": "next start",
     "dev": "next dev",
+    "start": "next start",
     "debug": "NODE_OPTIONS='--inspect' next dev",
     "preview": "next build && next start",
     "lint": "next lint"
