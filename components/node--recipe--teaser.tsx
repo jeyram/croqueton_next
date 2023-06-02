@@ -17,12 +17,14 @@ export function NodeRecipeTeaser({ node, ...props }: NodeRecipeTeaserProps) {
       {...props}
     >
       <h2 className="flex-1 font-serif text-2xl">{node.title}</h2>
-      {/* {node.field_difficulty && (
+      {node.field_dog_status && (
         <p className="text-sm capitalize text-gray-darker">
-          <span className="font-semibold">{t("difficulty")}:</span>{" "}
-          {node.field_difficulty}
+          <span className="font-semibold">{t("status")}:</span>{" "}
+          <span className={node.field_dog_status == "Adopción" ? "text-lime-600" :""}>
+            {node.field_dog_status}
+          </span>
         </p>
-      )} */}
+      )}
       <MediaImage media={node.field_media_image} width={335} height={225} />
       <Link href={node.path.alias} passHref>
         <a className="inline-flex items-center uppercase hover:underline text-link">
