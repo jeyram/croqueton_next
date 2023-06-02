@@ -25,7 +25,7 @@ module.exports = {
         black: "#000000",
         text: "#464646",
         primary: "#da3c13",
-        secondary: "#d93760",
+        secondary: "#4b7fae",
         link: "#008068",
         body: "#fbf5ee",
         border: "#fcece7",
