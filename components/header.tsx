@@ -5,10 +5,11 @@ import classNames from "classnames"
 
 import siteConfig from "site.config"
 import { Logo } from "components/logo"
-import { LocaleSwitcher } from "components/locale-switcher"
+// import { LocaleSwitcher } from "components/locale-switcher"
 import { MenuMain } from "components/menu-main"
-import { MenuUser } from "components/menu-user"
+// import { MenuUser } from "components/menu-user"
 import { FormSearch } from "components/form--search"
+import { SocialIcon } from "react-social-icons"
 
 export interface HeaderProps {
   menus: {
@@ -30,7 +31,12 @@ export function Header({ menus }: HeaderProps) {
             <FormSearch />
           </div>
           <div className="flex justify-end">
-            <MenuUser />
+            {/* <MenuUser /> */}
+            <div className="flex space-x-4">
+              <SocialIcon url="https://twitter.com/GdlCroqueton" target="_blank" style={{ height: 28, width: 28 }}/>
+              <SocialIcon url="https://www.facebook.com/CroquetonGDL" target="_blank" style={{ height: 28, width: 28 }}/>
+              <SocialIcon url="https://www.instagram.com/croquetongdl" target="_blank" style={{ height: 28, width: 28 }}/>
+            </div>
           </div>
         </div>
       </div>
