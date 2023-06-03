@@ -23,7 +23,7 @@ export function BlockBanner({ block }: BlockBannerProps) {
               href={block.field_content_link.uri.replace("internal:", "")}
               passHref
             >
-              <a className="sm:px-6 py-3 font-serif text-xl text-white transition-colors border-2 rounded-md bg-secondary hover:bg-white hover:text-black border-secondary">
+              <a className="whitespace-nowrap px-3 py-3 font-serif text-lg text-white transition-colors border-2 rounded-md bg-secondary hover:bg-white hover:text-black border-secondary">
                 {block.field_content_link.title}
               </a>
             </Link>
