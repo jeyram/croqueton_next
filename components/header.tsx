@@ -26,10 +26,11 @@ export function Header({ menus }: HeaderProps) {
         <div className="grid items-center justify-between grid-cols-3 py-4 border-b border-gray-lighter md:py-6">
           <div>
             {/* <LocaleSwitcher /> */}
-            <a className="sm:px-6 py-1 font-serif text-xl text-white
-             transition-colors border-2 rounded-md
-             bg-primary hover:bg-white hover:text-black border-primary"
-             href="/como-ayudar">Donar aquí</a>
+            <Link href="/como-ayudar" passHref>
+              <a className="sm:px-6 py-1 font-serif text-xl text-white
+              transition-colors border-2 rounded-md
+              bg-primary hover:bg-white hover:text-black border-primary">Donar aquí</a>
+            </Link>
           </div>
           <div className="flex justify-center">
             <FormSearch />
