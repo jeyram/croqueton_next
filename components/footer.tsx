@@ -71,7 +71,7 @@ export function Footer({ menus, blocks }: FooterProps) {
                     )}
                     passHref
                   >
-                    <a className="text-sm underline transition-colors hover:bg-black">
+                    <a className="text-sm font-semibold transition-colors hover:underline hover:bg-secondary">
                       {blocks.footerPromo.field_content_link.title}
                     </a>
                   </Link>
