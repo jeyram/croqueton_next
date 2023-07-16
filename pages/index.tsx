@@ -10,6 +10,13 @@ import { Layout, LayoutProps } from "components/layout"
 import { BlockBanner } from "components/block--banner"
 import { NodeArticleCardAlt } from "components/node--article--card-alt"
 import { NodeRecipeCard } from "components/node--recipe--card"
+import { StatisticsCard } from "components/statistics-card"
+import { Cake } from "components/cake"
+import { Food } from "components/food"
+import { House } from "components/house"
+import { Cuting } from "components/cuting"
+import { Croquettes } from "components/croquettes"
+import { Albergues } from "components/albergues"
 
 interface IndexPageProps extends LayoutProps {
   banner: DrupalBlock
@@ -25,6 +32,9 @@ export default function IndexPage({
   blocks,
 }: IndexPageProps) {
   const { t } = useTranslation()
+  const data =[
+    {img_svg:{Cake}, qnty:"+ 55,000", description:"Perros alimentados"}
+  ]
 
   return (
     <Layout meta={{ title: t("home") }} menus={menus} blocks={blocks}>
@@ -42,6 +52,19 @@ export default function IndexPage({
               />
             ))
           : null}
+      </div>
+      <div className="container">
+        <p className="py-10 font-serif text-3xl text-center text-text">
+          {"Desde el 2010 y gracias a nuestros bienhechores, realizamos las siguientes acciones:"}
+        </p>
+        <div className="grid gap-2 sm:grid-cols-3">
+          <StatisticsCard img_svg={Food} qnty="+ 98,000" description="Lomitos alimentados" />
+          <StatisticsCard img_svg={House} qnty="11,890" description="Adopciones" />
+          <StatisticsCard img_svg={Cuting} qnty="10,000" description="Esterilizaciones" />
+          <StatisticsCard img_svg={Croquettes} qnty="870 Tns." description="Croquetas recolectadas" />
+          <StatisticsCard img_svg={Albergues} qnty="+ 72" description="Albergues apoyados" />
+          <StatisticsCard img_svg={Cake} qnty="55,000" description="Lomitos alimentados" />
+        </div>
       </div>
       {promotedRecipes?.length ? (
         <div className="container">

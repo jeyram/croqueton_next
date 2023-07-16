@@ -101,6 +101,7 @@ export function getParams(
         "field_title",
         "field_summary",
         "field_content_link",
+        "field_banner_class",
         "field_media_image",
       ])
       .addFields("media--image", ["field_media_image"])
