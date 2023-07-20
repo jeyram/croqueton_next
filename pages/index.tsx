@@ -17,6 +17,7 @@ import { House } from "components/house"
 import { Cuting } from "components/cuting"
 import { Croquettes } from "components/croquettes"
 import { Albergues } from "components/albergues"
+import { Rescue } from "components/rescue"
 
 interface IndexPageProps extends LayoutProps {
   banner: DrupalBlock
@@ -53,25 +54,25 @@ export default function IndexPage({
             ))
           : null}
       </div>
-      <div className="container">
+      <div className="container hidden md:block ">
         <p className="py-10 font-serif text-3xl text-center text-text">
-          {"Desde el 2010 y gracias a nuestros bienhechores, realizamos las siguientes acciones:"}
+          {"Desde el 2010 y gracias a nuestros bienhechores, hemos realizado:"}
         </p>
         <div className="grid gap-2 sm:grid-cols-3">
           <StatisticsCard img_svg={Food} qnty="+ 98,000" description="Lomitos alimentados" />
           <StatisticsCard img_svg={House} qnty="11,890" description="Adopciones" />
           <StatisticsCard img_svg={Cuting} qnty="10,000" description="Esterilizaciones" />
-          <StatisticsCard img_svg={Croquettes} qnty="870 Tns." description="Croquetas recolectadas" />
-          <StatisticsCard img_svg={Albergues} qnty="+ 72" description="Albergues apoyados" />
-          <StatisticsCard img_svg={Cake} qnty="55,000" description="Lomitos alimentados" />
+          <StatisticsCard img_svg={Croquettes} qnty="1000 T." description="Croquetas recolectadas" />
+          <StatisticsCard img_svg={Albergues} qnty="72" description="Albergues apoyados" />
+          <StatisticsCard img_svg={Rescue} qnty="980" description="Rescates" />
         </div>
       </div>
       {promotedRecipes?.length ? (
         <div className="container">
           <p className="py-10 font-serif text-3xl text-center text-text">
-            {"Adopta y cambia una vida. Estos son nuestros perritos en busca de familia."}
+            {"Algunos de nuestros perritos en busca de familia. Adopta y cambia una vida:"}
           </p>
-          <div className="grid gap-2 sm:grid-cols-4">
+          <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
             {promotedRecipes.map((node) => (
               <NodeRecipeCard node={node} key={node.id} />
             ))}

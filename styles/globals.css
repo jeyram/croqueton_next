@@ -11,3 +11,11 @@
 #nprogress .bar {
   background: #da3c13;
 }
+
+.home-banner .image__wrapper span img {
+  @apply lg:top-[-34em] !important;
+}
+
+.our-dogs-banner .image__wrapper span img {
+  @apply lg:top-[-65em] !important;
+}
