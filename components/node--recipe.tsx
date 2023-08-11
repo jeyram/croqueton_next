@@ -9,6 +9,14 @@ import {
   FacebookShareButton,
   FacebookIcon,
 } from 'next-share'
+import {
+  TwitterShareButton,
+  TwitterIcon,
+} from 'next-share'
+import {
+  WhatsappShareButton,
+  WhatsappIcon,
+} from 'next-share'
 
 
 interface NodeRecipeProps {
@@ -135,14 +143,29 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
             <h2 className="pb-3 font-serif text-2xl border-b lg:text-3xl border-pink">
               {t("share")}
             </h2>
-            <span>{router.asPath}</span>
-            <FacebookShareButton
-              url={'https://croqueton.org/' + router.asPath}
-              quote={'Croqueton es un proyecto de Échanos la pata A.C.'}
-              hashtag={'#CroquetonGDL'}
-            >
-              <FacebookIcon size={32} round />
-            </FacebookShareButton>
+            <div className="flex space-x-3">
+              <FacebookShareButton
+                url={'https://croqueton.org/' + router.asPath}
+                quote={'Croqueton es un proyecto de Échanos la pata A.C.'}
+                hashtag={'#CroquetonGDL'}
+              >
+                <FacebookIcon size={32} round />
+              </FacebookShareButton>
+              <TwitterShareButton
+                url={'https://croqueton.org/' + router.asPath}
+                title={'Croqueton es un proyecto de Échanos la pata A.C.'}
+              >
+                <TwitterIcon size={32} round />
+              </TwitterShareButton>
+              <WhatsappShareButton
+                url={'https://croqueton.org/' + router.asPath}
+                title={'Croqueton es un proyecto de Échanos la pata A.C.'}
+                separator=":: "
+              >
+                <WhatsappIcon size={32} round />
+              </WhatsappShareButton>
+
+            </div>
           </div>
         </div>
       </article>
