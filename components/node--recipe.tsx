@@ -1,6 +1,6 @@
 import { DrupalNode } from "next-drupal"
 import { useTranslation } from "next-i18next"
-// import Link from "next/link"
+import { useRouter } from "next/router"
 
 import { MediaImage } from "components/media--image"
 import { Breadcrumbs } from "components/breadcrumbs"
@@ -17,6 +17,7 @@ interface NodeRecipeProps {
 
 export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
   const { t } = useTranslation()
+  const router = useRouter()
 
   return (
     <div className="container" {...props}>
@@ -120,25 +121,6 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
           </div>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
-        <FacebookShareButton
-          url={'https://github.com/next-share'}
-          quote={'next-share is a social share buttons for your next React apps.'}
-          hashtag={'#nextshare'}
-        >
-          <FacebookIcon size={32} round />
-        </FacebookShareButton>
-          {/* <div className="flex flex-col p-8 space-y-6 bg-body">
-            <h2 className="pb-3 font-serif text-2xl border-b lg:text-3xl border-pink">
-              {t("ingredients")}
-            </h2>
-            <ul className="divide-y divide-pink">
-              {node.field_ingredients?.map((ingredients, index) => (
-                <li key={index} className="py-2">
-                  {ingredients}
-                </li>
-              ))}
-            </ul>
-          </div> */}
           <div className="flex flex-col space-y-6 md:col-span-2">
             <h3 className="pb-3 font-serif text-2xl border-b lg:text-3xl border-pink">
               {t("story")}
@@ -148,6 +130,19 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
                 <FormattedText text={node.field_recipe_instruction.processed} />
               </div>
             )}
+          </div>
+          <div className="flex flex-col p-8 space-y-6 bg-body">
+            <h2 className="pb-3 font-serif text-2xl border-b lg:text-3xl border-pink">
+              {t("share")}
+            </h2>
+            <span>{router.asPath}</span>
+            <FacebookShareButton
+              url={'https://croqueton.org/' + router.asPath}
+              quote={'Croqueton es un proyecto de Échanos la pata A.C.'}
+              hashtag={'#CroquetonGDL'}
+            >
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
           </div>
         </div>
       </article>
