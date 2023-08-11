@@ -26,7 +26,7 @@ export default async function handler(
     // Send the payload to Drupal.
     // Ensure you have the /entity/contact_message resource enabled.
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/entity/contact_message`,
+      `${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/`,
       {
         method: "POST",
         headers: {
@@ -41,6 +41,7 @@ export default async function handler(
     if (!response.ok) {
       throw new Error()
     }
+    console.log(body)
 
     // The form has been submitted. Return success 200.
     res.end()

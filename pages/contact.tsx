@@ -2,7 +2,7 @@ import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 import { useTranslation } from "next-i18next"
 
 import { getGlobalElements } from "lib/get-global-elements"
-import { Breadcrumbs } from "components/breadcrumbs"
+// import { Breadcrumbs } from "components/breadcrumbs"
 import { Layout, LayoutProps } from "components/layout"
 import { PageHeader } from "components/page-header"
 import { FormContact } from "components/form--contact"
