@@ -8,6 +8,10 @@
   }
 }
 
+.visually-hidden {
+  display:none;
+}
+
 #nprogress .bar {
   background: #da3c13;
 }
