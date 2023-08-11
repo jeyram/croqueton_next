@@ -5,6 +5,11 @@ import { useTranslation } from "next-i18next"
 import { MediaImage } from "components/media--image"
 import { Breadcrumbs } from "components/breadcrumbs"
 import { FormattedText } from "components/formatted-text"
+import {
+  FacebookShareButton,
+  FacebookIcon,
+} from 'next-share'
+
 
 interface NodeRecipeProps {
   node: DrupalNode
@@ -29,30 +34,20 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
       <article className="p-6 bg-white border border-border sm:p-9 text-text">
         <div className="flex flex-col space-y-4">
           <h1 className="font-serif text-4xl">{node.title}</h1>
-          {/* {node.field_recipe_category?.length ? (
-            <div className="flex space-x-2">
-              <span className="font-semibold">{t("recipe-category")}: </span>
-              {node.field_recipe_category.map((tag) => (
-                <Link key={tag.id} href={tag.path.alias} passHref>
-                  <a className="underline transition-colors text-link hover:text-primary hover:bg-border">
-                    {tag.name}
-                  </a>
-                </Link>
-              ))}
+          {node.field_city && (
+            <div className="flex space-x-0">
+              <svg
+                className="w-5 h-5"
+                fill="#f73838"
+                viewBox="0 0 600 600"
+              >
+                <path d="M213 1c0 .5-1.3 1-3 1-9.7 0-38.8 7.6-56.7 14.9-21 8.4-43.1 23.1-61.7 41.1-32.3 31.1-52 67.8-59.8 111.1-1.9 10.5-2.3 15.9-2.3 35.9 0 20.6.3 24.9 2.3 35 4.8 23.6 12.2 42.4 28.4 71.5C76.3 340.6 82 350.3 93.5 368c59.2 91.3 66.2 102.8 86.4 143 24.2 47.9 39.7 89.3 51.8 138l5.7 23.2 2.2-10.3c6.1-29.1 17.7-66.9 29.5-96 20.3-50.4 46.3-97.9 90.3-164.9 33.1-50.5 40.2-62.2 54.6-90.3 24.4-47.4 30.3-68.3 30.3-106.2-.1-34.7-6.4-62-20.9-90.6-23.1-45.3-61.7-80.7-107.4-98.2C297.2 8.5 271.4 2 261.4 2c-1.8 0-3.4-.5-3.4-1 0-.6-8.2-1-22.5-1S213 .4 213 1zm40.7 129c25.9 6.2 47 26.9 54 53 2.8 10.2 2.3 29.2-.9 39.2-7.9 24-25.6 41.4-49.8 49-6.3 1.9-9.7 2.3-20.5 2.3-17.4 0-26.4-2.7-40.7-12.2-12.5-8.2-22.5-21.3-28.1-36.6-2.6-7-3.1-10-3.5-20.8-.4-10.6-.1-13.8 1.7-20.8 10.1-38.9 49-62.4 87.8-53.1z"/>
+              </svg>
+              <span className="font-semibold">
+                {node.field_city}
+              </span>
             </div>
-          ) : null} */}
-          {/* {node.field_tags?.length ? (
-            <div className="flex space-x-2">
-              <span className="font-semibold">{t("tags")}: </span>
-              {node.field_tags.map((tag) => (
-                <Link key={tag.id} href={tag.path.alias} passHref>
-                  <a className="underline transition-colors text-link hover:text-primary hover:bg-border">
-                    {tag.name}
-                  </a>
-                </Link>
-              ))}
-            </div>
-          ) : null} */}
+          )}
           {node.field_summary && (
             <div>
               <FormattedText text={node.field_summary.processed} />
@@ -62,7 +57,7 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
         <div className="grid gap-4 py-10 lg:grid-cols-2">
           <MediaImage media={node.field_media_image} width={770} height={512} />
           <div className="grid gap-4 lg:grid-cols-2">
-            {node.field_preparation_time && (
+            {node.field_age && (
               <div className="flex items-center space-x-2 lg:flex-col">
                 <svg
                   className="w-10 h-10 lg:w-14 lg:h-14 text-primary"
@@ -93,7 +88,7 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
                 </p>
               </div>
             )}
-            {node.field_number_of_servings && (
+            {node.field_protocol && (
               <div className="flex items-center space-x-2 lg:flex-col">
                 <svg
                   fill="currentColor"
@@ -108,7 +103,7 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
                 <p>{node.field_protocol}</p>
               </div>
             )}
-            {node.field_number_of_servings && (
+            {node.field_dog_status && (
               <div className="flex items-center space-x-2 lg:flex-col">
                 <svg
                   fill="currentColor"
@@ -125,6 +120,13 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
           </div>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
+        <FacebookShareButton
+          url={'https://github.com/next-share'}
+          quote={'next-share is a social share buttons for your next React apps.'}
+          hashtag={'#nextshare'}
+        >
+          <FacebookIcon size={32} round />
+        </FacebookShareButton>
           {/* <div className="flex flex-col p-8 space-y-6 bg-body">
             <h2 className="pb-3 font-serif text-2xl border-b lg:text-3xl border-pink">
               {t("ingredients")}
