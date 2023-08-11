@@ -2,6 +2,7 @@ import * as React from "react"
 import classNames from "classnames"
 import { useTranslation } from "next-i18next"
 import { useSession } from "next-auth/react"
+import { sendContactForm } from "lib/mailer"
 
 interface FormContactProps extends React.HTMLProps<HTMLFormElement> {}
 
@@ -19,27 +20,25 @@ export function FormContact({ className, ...props }: FormContactProps) {
   const onSubmit = async (event) => {
     event.preventDefault()
     const data = new FormData(event.target)
-
     setFormStatus({ status: "fetching" })
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify(Object.fromEntries(data)),
-    })
+    const formDataObj = {};
+    data.forEach((value, key) => (formDataObj[key] = value));
+    console.log(formDataObj);
 
-    if (!response.ok) {
+    try{
+      await sendContactForm(formDataObj)
+      return setFormStatus({
+        status: "success",
+        message: t("your-message-has-been-sent"),
+      })
+    } catch (error){
       return setFormStatus({
         status: "error",
         message: t("an-error-occured-please-try-again"),
       })
     }
-
-    return setFormStatus({
-      status: "success",
-      message: t("your-message-has-been-sent"),
-    })
   }
-
   return (
     <form
       className={classNames("grid gap-4", className)}

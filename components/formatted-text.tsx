@@ -14,8 +14,8 @@ const options: HTMLReactParserOptions = {
           src,
           alt,
           class: className,
-          width = "600px",
-          height = "400px",
+          width = "100",
+          height = "180",
         } = domNode.attribs
 
         if (isRelative(src)) {
@@ -23,11 +23,11 @@ const options: HTMLReactParserOptions = {
             <div className={className}>
               <Image
                 src={`${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/${src}`}
-                width={`${width}px`}
-                height={`${height}px`}
+                width={`${width}%`}
+                height={`${height}%`}
                 alt={alt}
-                layout="intrinsic"
-                objectFit="cover"
+                // layout="intrinsic"
+                // objectFit="cover"
               />
             </div>
           )
