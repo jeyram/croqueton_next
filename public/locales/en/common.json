@@ -1,4 +1,5 @@
 {
+	"adoptables": "Adoptables",
 	"age": "Age",
 	"an-error-occured-please-try-again": "An error occured. Please try again.",
 	"are-you-use-you-want-to-delete-this-article": "Are you sure you want to delete this article?",
@@ -52,6 +53,7 @@
 	"title": "Title",
 	"unrecognized-username-or-password-please-try-again": "Unrecognized username or password. Please try again.",
 	"username": "Username",
+	"view-adoptable": "View Adoptable",
 	"view-article": "View Article",
 	"view-recipe": "View Recipe",
 	"view-dog": "View Dog",

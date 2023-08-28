@@ -1,4 +1,5 @@
 {
+	"adoptables": "Adoptables",
 	"age": "Edad",
 	"an-error-occured-please-try-again": "Ocurrió un error. Inténtalo de nuevo.",
 	"are-you-use-you-want-to-delete-this-article": "¿Está seguro de que desea eliminar este artículo?",
@@ -52,6 +53,7 @@
 	"title": "Título",
 	"unrecognized-username-or-password-please-try-again": "Nombre de usuario o contraseña no reconocidos. Inténtalo de nuevo.",
 	"username": "Nombre de usuario",
+	"view-adoptable": "Ver adoptable",
 	"view-article": "Ver artículo",
 	"view-recipe": "Ver receta",
 	"view-dog": "Ver perrito",

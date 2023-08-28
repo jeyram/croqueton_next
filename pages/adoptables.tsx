@@ -33,10 +33,10 @@ export default function RecipesPage({
     >
       <BlockBanner block={banner} />
       <PageHeader
-        heading={t("Nuestros Perros")}
+        heading={t("Nuestros Adoptables")}
         breadcrumbs={[
           {
-            title: t("Nuestros Perros"),
+            title: t("Adoptables"),
           },
         ]}
       />

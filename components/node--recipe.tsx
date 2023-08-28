@@ -1,3 +1,7 @@
+import Link from "next/link"
+import React, { useState } from "react"
+import Script from "next/script"
+
 import { DrupalNode } from "next-drupal"
 import { useTranslation } from "next-i18next"
 import { useRouter } from "next/router"
@@ -17,6 +21,7 @@ import {
   WhatsappShareButton,
   WhatsappIcon,
 } from 'next-share'
+import DonateButton from "./donate--button"
 
 
 interface NodeRecipeProps {
@@ -26,14 +31,15 @@ interface NodeRecipeProps {
 export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
   const { t } = useTranslation()
   const router = useRouter()
+  const [scriptLoaded, setScriptLoaded]  = useState(false)
 
   return (
     <div className="container" {...props}>
       <Breadcrumbs
         items={[
           {
-            title: t("our-dogs"),
-            url: "/nuestros-perros",
+            title: t("adoptables"),
+            url: "/adoptables",
           },
           {
             title: node.title,
@@ -143,7 +149,7 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
             <h2 className="pb-3 font-serif text-2xl border-b lg:text-3xl border-pink">
               {t("share")}
             </h2>
-            <div className="flex space-x-3">
+            <div className="flex space-x-4 justify-center">
               <FacebookShareButton
                 url={'https://croqueton.org/' + router.asPath}
                 quote={'Croqueton es un proyecto de Échanos la pata A.C.'}
@@ -164,7 +170,31 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
               >
                 <WhatsappIcon size={32} round />
               </WhatsappShareButton>
+            </div>
 
+            <h2 className="pb-3 pt-10 font-serif text-2xl border-b lg:text-3xl border-pink">
+              {t("Acciones")}
+            </h2>
+            <div className="flex justify-center pt-6">
+              <Link
+                href={"#"}
+                passHref
+              >
+                <a className="
+                    bg-slate-600
+                    hover:bg-slate-500
+                    font-bold
+                    text-white
+                    rounded-md
+                    py-4
+                    w-[290px]
+                    text-center">
+                 🐾 Adopta a {node.title}
+                </a>
+              </Link>
+            </div>
+            <div id="donate-button-container" className="pt-6">
+              <DonateButton/>
             </div>
           </div>
         </div>
