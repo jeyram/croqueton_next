@@ -1,7 +1,4 @@
 import Link from "next/link"
-import React, { useState } from "react"
-import Script from "next/script"
-
 import { DrupalNode } from "next-drupal"
 import { useTranslation } from "next-i18next"
 import { useRouter } from "next/router"
@@ -9,6 +6,7 @@ import { useRouter } from "next/router"
 import { MediaImage } from "components/media--image"
 import { Breadcrumbs } from "components/breadcrumbs"
 import { FormattedText } from "components/formatted-text"
+import DonateButton from "components/donate--button"
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -21,7 +19,6 @@ import {
   WhatsappShareButton,
   WhatsappIcon,
 } from 'next-share'
-import DonateButton from "./donate--button"
 
 
 interface NodeRecipeProps {
@@ -31,7 +28,6 @@ interface NodeRecipeProps {
 export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
   const { t } = useTranslation()
   const router = useRouter()
-  const [scriptLoaded, setScriptLoaded]  = useState(false)
 
   return (
     <div className="container" {...props}>
@@ -134,7 +130,7 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
             )}
           </div>
         </div>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="flex grid gap-8 lg:grid-cols-3">
           <div className="flex flex-col space-y-6 md:col-span-2">
             <h3 className="pb-3 font-serif text-2xl border-b lg:text-3xl border-pink">
               {t("story")}
@@ -145,7 +141,7 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
               </div>
             )}
           </div>
-          <div className="flex flex-col p-8 space-y-6 bg-body">
+          <div className="flex flex-col order-first lg:order-last p-8 space-y-6 bg-body">
             <h2 className="pb-3 font-serif text-2xl border-b lg:text-3xl border-pink">
               {t("share")}
             </h2>
@@ -186,8 +182,7 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
                     font-bold
                     text-white
                     rounded-md
-                    py-4
-                    w-[290px]
+                    p-3
                     text-center">
                  🐾 Adopta a {node.title}
                 </a>
