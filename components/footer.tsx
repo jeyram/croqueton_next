@@ -49,12 +49,12 @@ export function Footer({ menus, blocks }: FooterProps) {
               {blocks.footerPromo.field_media_image && (
                 <MediaImage
                   media={blocks.footerPromo.field_media_image}
-                  width={266}
-                  height={236}
+                  width={260}
+                  height={91}
                   layout="fixed"
                 />
               )}
-              <div className="items-start flex-1 space-y-4 text-center lg:pt-10 lg:flex lg:flex-col lg:text-left">
+              <div className="items-start flex-1 space-y-2 text-center lg:flex lg:flex-col lg:text-left">
                 <h2 className="font-serif text-2xl">
                   {blocks.footerPromo.field_title}
                 </h2>

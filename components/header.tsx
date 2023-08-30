@@ -24,11 +24,10 @@ export function Header({ menus }: HeaderProps) {
     <header className="bg-white">
       <div className="container">
         <div className="grid items-center justify-between grid-cols-3 py-4 border-b border-gray-lighter md:py-6">
-          <div>
+          <div className="flex justify-start">
             {/* <LocaleSwitcher /> */}
-            <Link href="/como-ayudar" passHref>
-              <a className="sm:px-6 py-1 font-serif text-xl text-white
-              transition-colors border-2 rounded-md
+            <Link href="https://www.paypal.com/donate/?hosted_button_id=A66MEGWWN6WM4" passHref>
+              <a className=" text-sm p-1.5 text-white transition-colors border-2 rounded-md
               bg-primary hover:bg-white hover:text-black border-primary">Donar aquí</a>
             </Link>
           </div>
