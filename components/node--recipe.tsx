@@ -173,7 +173,7 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
             </h2>
             <div className="flex justify-center pt-6">
               <Link
-                href={"#"}
+                href={"https://forms.gle/f7BUvpP9Xk3LdQ5PA"}
                 passHref
               >
                 <a className="
@@ -186,7 +186,8 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
                     rounded-md
                     w-[250px]
                     py-3
-                    text-center">
+                    text-center"
+                    target="_blank">
                   🐾 Adopta a {node.title}
                 </a>
               </Link>
