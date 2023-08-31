@@ -14,16 +14,16 @@ export default function ContactPage({ menus, blocks }: ContactPageProps) {
   return (
     <Layout
       meta={{
-        title: t("website-feedback"),
+        title: t("Contacto Croquetón"),
       }}
       menus={menus}
       blocks={blocks}
     >
       <PageHeader
-        heading={t("website-feedback")}
+        heading={t("🐾 Contacto Croquetón")}
         breadcrumbs={[
           {
-            title: t("contact"),
+            title: t("contacto"),
           },
         ]}
       />
