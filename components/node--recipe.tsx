@@ -19,6 +19,10 @@ import {
   WhatsappShareButton,
   WhatsappIcon,
 } from 'next-share'
+import {
+  TelegramShareButton,
+  TelegramIcon,
+} from 'next-share'
 
 
 interface NodeRecipeProps {
@@ -147,25 +151,31 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
             </h2>
             <div className="flex space-x-4 justify-center">
               <FacebookShareButton
-                url={'https://croqueton.org/' + router.asPath}
-                quote={'Croqueton es un proyecto de Échanos la pata A.C.'}
+                url={'https://croqueton.org' + router.asPath}
+                quote={node.title + ', busca un hogar. Gracias por echarnos la pata!! '}
                 hashtag={'#CroquetonGDL'}
               >
                 <FacebookIcon size={32} round />
               </FacebookShareButton>
               <TwitterShareButton
-                url={'https://croqueton.org/' + router.asPath}
-                title={'Croqueton es un proyecto de Échanos la pata A.C.'}
+                url={'https://croqueton.org' + router.asPath}
+                title={node.title + ', busca un hogar. Gracias por echarnos la pata!! '}
               >
                 <TwitterIcon size={32} round />
               </TwitterShareButton>
               <WhatsappShareButton
-                url={'https://croqueton.org/' + router.asPath}
-                title={'Croqueton es un proyecto de Échanos la pata A.C.'}
+                url={'https://croqueton.org' + router.asPath}
+                title={node.title + ', busca un hogar. Gracias por echarnos la pata!! '}
                 separator=":: "
               >
                 <WhatsappIcon size={32} round />
               </WhatsappShareButton>
+              <TelegramShareButton
+                url={'https://croqueton.org' + router.asPath}
+                title={node.title + ', busca un hogar. Gracias por echarnos la pata!! '}
+              >
+                <TelegramIcon size={32} round />
+              </TelegramShareButton>
             </div>
 
             <h2 className="pb-3 pt-10 font-serif text-2xl border-b lg:text-3xl border-pink">
@@ -192,7 +202,7 @@ export function NodeRecipe({ node, ...props }: NodeRecipeProps) {
                 </a>
               </Link>
             </div>
-            <div id="donate-button-container" className="pt-6">
+            <div id="donate-button-container" className="pt-6 w-[250px] flex-1 self-center">
               <DonateButton />
             </div>
           </div>
