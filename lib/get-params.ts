@@ -28,7 +28,7 @@ export function getParams(
     return params
       .addInclude([
         "field_media_image.field_media_image",
-        "uid.user_picture",
+        // "uid.user_picture",
         "field_tags",
       ])
       .addFields("node--article", [
@@ -40,8 +40,12 @@ export function getParams(
         "created",
         "uid",
         "field_tags",
+        "field_unom",
+        "field_uxlink",
+
       ])
-      .addFields("user--user", ["display_name", "user_picture"])
+      .addFields("user--user", ["display_name"])
+      .addFields("user--user", ["field_unom"])
       .addFields("media--image", ["field_media_image"])
       .addFields("file--file", ["uri", "resourceIdObjMeta"])
       .addFields("taxonomy_term--tags", ["name", "path"])

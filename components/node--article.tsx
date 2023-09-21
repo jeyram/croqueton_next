@@ -2,11 +2,28 @@ import Image from "next/image"
 import Link from "next/link"
 import { DrupalNode } from "next-drupal"
 import { useTranslation } from "next-i18next"
+import { useRouter } from "next/router"
 
 import { absoluteURL, formatDate } from "lib/utils"
 import { FormattedText } from "components/formatted-text"
 import { Breadcrumbs } from "components/breadcrumbs"
 import { NodeArticleCard } from "components/node--article--card"
+import {
+  FacebookShareButton,
+  FacebookIcon,
+} from 'next-share'
+import {
+  TwitterShareButton,
+  TwitterIcon,
+} from 'next-share'
+import {
+  WhatsappShareButton,
+  WhatsappIcon,
+} from 'next-share'
+import {
+  TelegramShareButton,
+  TelegramIcon,
+} from 'next-share'
 
 export interface NodeArticleProps {
   node: DrupalNode
@@ -17,6 +34,7 @@ export interface NodeArticleProps {
 
 export function NodeArticle({ node, additionalContent }: NodeArticleProps) {
   const { t } = useTranslation()
+  const router = useRouter()
 
   return (
     <div className="container">
@@ -34,12 +52,52 @@ export function NodeArticle({ node, additionalContent }: NodeArticleProps) {
       <article className="grid gap-8 pb-12 lg:grid-cols-10">
         <div className="p-6 bg-white border md:p-10 border-border lg:col-span-7 text-text">
           <h1 className="font-serif text-4xl">{node.title}</h1>
+          <div className="flex space-x-4 justify-center my-4">
+            <FacebookShareButton
+              url={'https://croqueton.org' + router.asPath}
+              quote={node.title}
+              hashtag={'#CroquetonGDL'}
+            >
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
+            <TwitterShareButton
+              url={'https://croqueton.org' + router.asPath}
+              title={node.title}
+            >
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
+            <WhatsappShareButton
+              url={'https://croqueton.org' + router.asPath}
+              title={node.title}
+              separator=":: "
+            >
+              <WhatsappIcon size={32} round />
+            </WhatsappShareButton>
+            <TelegramShareButton
+              url={'https://croqueton.org' + router.asPath}
+              title={node.title}
+            >
+              <TelegramIcon size={32} round />
+            </TelegramShareButton>
+          </div>
           <div className="flex items-center my-4 space-x-2 text-sm">
-            {node.uid?.display_name ? (
+            {/* {node.uid?.display_name ? (
               <span>
                 {t("by")} {node.uid.display_name}
               </span>
-            ) : null}
+            ) : null} */}
+            {node.field_uxlink ? (
+              <Link
+                href={'https://twitter.com/' + node.field_uxlink}
+                passHref
+              >
+                <a target="_blank" rel="noopener noreferrer">
+                  {t("by")} {node.field_unom}
+                </a>
+              </Link>
+            ) :
+              <span> {t("by")} {node.field_unom} </span>
+            }
             <svg
               className="w-[6px] h-[6px] opacity-60 text-link"
               viewBox="0 0 24 24"
@@ -52,7 +110,7 @@ export function NodeArticle({ node, additionalContent }: NodeArticleProps) {
             <div className="flex mb-6 space-x-2">
               <span className="font-semibold">{t("tags")}: </span>
               {node.field_tags.map((tag) => (
-                <Link key={tag.id} href={"https://facebook.com"} /*href={tag.path.alias}*/ passHref>
+                <Link key={tag.id} href={tag.path.alias} passHref>
                   <a className="underline transition-colors text-link hover:text-primary hover:bg-border">
                     {tag.name}
                   </a>
