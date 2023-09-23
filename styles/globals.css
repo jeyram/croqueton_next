@@ -8,6 +8,10 @@
   }
 }
 
+.croq-l {
+  @apply pr-4  md:w-[350px] lg:w-[205px]
+}
+
 .visually-hidden {
   display:none;
 }
