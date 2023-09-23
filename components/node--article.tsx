@@ -91,7 +91,15 @@ export function NodeArticle({ node, additionalContent }: NodeArticleProps) {
                 href={'https://twitter.com/' + node.field_uxlink}
                 passHref
               >
-                <a target="_blank" rel="noopener noreferrer">
+                <a className="
+                underline
+                transition-colors
+                text-link
+                hover:text-primary
+                hover:bg-border
+                "
+                target="_blank"
+                rel="noopener noreferrer">
                   {t("by")} {node.field_unom}
                 </a>
               </Link>
